@@ -6,7 +6,8 @@ TODO: Add a codecov badge for the main branch here.  What's shown is an example,
 
 Link to the deployed Heroku app
 
-* <https://s22-4pm-4-team02.herokuapp.com>
+* Production Deployment: <https://s22-4pm-4-team02.herokuapp.com>
+* QA deployment: <https://s22-4pm-4-team02-qa.herokuapp.com>  
 
 * Storybook (production): <https://ucsb-cs156-s22.github.io/team03-s22-4pm-4-docs/>
 * Storybook (development/qa): <https://ucsb-cs156-s22.github.io/team03-s22-4pm-4-docs-qa/>
