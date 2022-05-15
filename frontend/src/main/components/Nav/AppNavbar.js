@@ -71,7 +71,6 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
                 hasRole(currentUser, "ROLE_USER") && (
                   <NavDropdown title="article" id="appnavbar-articles-dropdown" data-testid="appnavbar-articles-dropdown" >
                     <NavDropdown.Item as={Link} to="/articles/list">List Articles</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/todos/create">Create Todo</NavDropdown.Item>
                   </NavDropdown>
                 )
               }
@@ -79,7 +78,6 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
                 hasRole(currentUser, "ROLE_USER") && (
                   <NavDropdown title="help" id="appnavbar-help-request-dropdown" data-testid="appnavbar-help-request-dropdown" >
                     <NavDropdown.Item as={Link} to="/helprequest/list">List Help Requests</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/todos/create">Create Todo</NavDropdown.Item>
                   </NavDropdown>
                 )
               }
@@ -87,7 +85,6 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
                 hasRole(currentUser, "ROLE_USER") && (
                   <NavDropdown title="review" id="appnavbar-menu-item-review-dropdown" data-testid="appnavbar-menu-item-review-dropdown" >
                     <NavDropdown.Item as={Link} to="/menuitemreview/list">List Menu Item Reviews</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/todos/create">Create Todo</NavDropdown.Item>
                   </NavDropdown>
                 )
               }
@@ -95,7 +92,6 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
                 hasRole(currentUser, "ROLE_USER") && (
                   <NavDropdown title="reccs" id="appnavbar-recommendation-request-dropdown" data-testid="appnavbar-recommendation-request-dropdown" >
                     <NavDropdown.Item as={Link} to="/recommendationrequest/list">List Recommendation Requests</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/todos/create">Create Todo</NavDropdown.Item>
                   </NavDropdown>
                 )
               }
@@ -103,7 +99,6 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
                 hasRole(currentUser, "ROLE_USER") && (
                   <NavDropdown title="menu item" id="appnavbar-ucsb-dining-commons-menu-item-dropdown" data-testid="appnavbar-ucsb-dining-commons-menu-item-dropdown" >
                     <NavDropdown.Item as={Link} to="/ucsbdiningcommonsmenuitem/list">List UCSB Dining Commons Menu Items</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/todos/create">Create Todo</NavDropdown.Item>
                   </NavDropdown>
                 )
               }
@@ -111,7 +106,6 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
                 hasRole(currentUser, "ROLE_USER") && (
                   <NavDropdown title="orgs" id="appnavbar-ucsb-organization-dropdown" data-testid="appnavbar-ucsb-organization-dropdown" >
                     <NavDropdown.Item as={Link} to="/ucsborganization/list">List UCSB Organizations</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/todos/create">Create Todo</NavDropdown.Item>
                   </NavDropdown>
                 )
               }
