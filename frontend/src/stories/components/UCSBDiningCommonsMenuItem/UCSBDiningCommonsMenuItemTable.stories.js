@@ -17,11 +17,11 @@ const Template = (args) => {
 export const Empty = Template.bind({});
 
 Empty.args = {
-    menuItem: []
+    ucsbDiningCommonsMenuItems: []
 };
 
 export const ThreeMenuItems = Template.bind({});
 
 ThreeMenuItems.args = {
-    menuItem: ucsbDiningCommonsMenuItemFixtures.threeMenuItems
+    ucsbDiningCommonsMenuItems: ucsbDiningCommonsMenuItemFixtures.threeMenuItems
 };
