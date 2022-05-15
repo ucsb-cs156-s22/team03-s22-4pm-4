@@ -55,7 +55,7 @@ function App() {
               <Route exact path="/ucsbdiningcommonsmenuitem/list" element={<UCSBDiningCommonsMenuItemIndexPage />} />
             </>
           )
-        }
+        }a
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
