@@ -9,7 +9,7 @@ export default function UCSBDiningCommonsMenuItemIndexPage() {
 
   const currentUser = useCurrentUser();
 
-  const { data: menuitems, error: _error, status: _status } =
+  const { data: ucsbDiningCommonsMenuItems, error: _error, status: _status } =
     useBackend(
       // Stryker disable next-line all : don't test internal caching of React Query
       ["/api/ucsbdiningcommonsmenuitem/all"],
@@ -22,7 +22,7 @@ export default function UCSBDiningCommonsMenuItemIndexPage() {
     <BasicLayout>
       <div className="pt-2">
         <h1>UCSB Dining Commons Menu Item</h1>
-        <UCSBDiningCommonsMenuItemTable ucsbDiningCommonsMenuItem={menuitems} currentUser={currentUser} />
+        <UCSBDiningCommonsMenuItemTable ucsbDiningCommonsMenuItems={ucsbDiningCommonsMenuItems} currentUser={currentUser} />
       </div>
     </BasicLayout>
   )
