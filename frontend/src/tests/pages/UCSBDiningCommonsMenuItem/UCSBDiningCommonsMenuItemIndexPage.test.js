@@ -1,4 +1,5 @@
 // import { fireEvent, render, waitFor } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { MemoryRouter } from "react-router-dom";
 import UCSBDiningCommonsMenuItemIndexPage from "main/pages/UCSBDiningCommonsMenuItem/UCSBDiningCommonsMenuItemIndexPage";
@@ -9,7 +10,7 @@ import { systemInfoFixtures } from "fixtures/systemInfoFixtures";
 // import { ucsbDiningCommonsMenuItemFixtures } from "fixtures/ucsbDiningCommonsMenuItemFixtures";
 import axios from "axios";
 import AxiosMockAdapter from "axios-mock-adapter";
-// import mockConsole from "jest-mock-console";
+// import mockConsole from "jest-mock-console";re
 
 
 const mockToast = jest.fn();
@@ -26,7 +27,7 @@ describe("UCSBDiningCommonsMenuItemIndexPage tests", () => {
 
     const axiosMock =new AxiosMockAdapter(axios);
 
-    // const testId = "UCSBDiningCommonsMenuItemTable";
+    // const testId = "UCSBDiningCommonsMenuItemTable";re
 
     const setupUserOnly = () => {
         axiosMock.reset();
