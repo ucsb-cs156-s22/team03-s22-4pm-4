@@ -52,7 +52,7 @@ export default function UCSBDiningCommonsMenuItemTable({ ucsbDiningCommonsMenuIt
         }
     ];
 
-    const testid = "UCSBDiningCommonsMenuItem";
+    const testid = "UCSBDiningCommonsMenuItemTable";
 
     const columnsIfAdmin = [
         ...columns,
