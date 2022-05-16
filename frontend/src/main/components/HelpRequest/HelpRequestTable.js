@@ -1,9 +1,9 @@
-import OurTable from "main/components/OurTable";
-// , { ButtonColumn } 
-// import { useBackendMutation } from "main/utils/useBackend";
-// import { cellToAxiosParamsDelete, onDeleteSuccess } from "main/utils/UCSBDateUtils"
-// import { useNavigate } from "react-router-dom";
-// import { hasRole } from "main/utils/currentUser";
+import OurTable, { ButtonColumn} from "main/components/OurTable";
+
+ import { useBackendMutation } from "main/utils/useBackend";
+import { cellToAxiosParamsDelete, onDeleteSuccess } from "main/utils/UCSBDateUtils"
+
+ import { hasRole } from "main/utils/currentUser";
 
 export default function HelpRequestTable({ helpRequest, currentUser }) {
 
@@ -18,7 +18,7 @@ export default function HelpRequestTable({ helpRequest, currentUser }) {
         cellToAxiosParamsDelete,
         { onSuccess: onDeleteSuccess },
         ["/api/helprequest/all"]
-    // );
+     );
     // Stryker enable all 
 
     // Stryker disable next-line all : TODO try to make a good test for this
@@ -40,15 +40,15 @@ export default function HelpRequestTable({ helpRequest, currentUser }) {
         {
             Header: 'Table or Breakout Room',
             accessor: 'tableOrBreakoutRoom',
-        }
+        },
         {
             Header: 'Time',
             accessor: 'requestTime',
-        }
+        },
         {
             Header: 'Explanation',
             accessor: 'explanation',
-        }
+        },
         {
             Header: 'Solved',
             accessor: 'solved',
