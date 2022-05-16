@@ -236,6 +236,149 @@ describe("AppNavbar tests", () => {
         await waitFor( () => expect(getByTestId(/appnavbar-dining-commons-list/)).toBeInTheDocument() );
 
     });
+
+
+
+
+    test("renders the articles menu correctly for an admin", async () => {
+
+        const currentUser = currentUserFixtures.adminUser;
+        const systemInfo = systemInfoFixtures.showingBoth;
+
+        const doLogin = jest.fn();
+
+        const {getByTestId  } = render(
+            <QueryClientProvider client={queryClient}>
+                <MemoryRouter>
+                    <AppNavbar currentUser={currentUser} systemInfo={systemInfo} doLogin={doLogin} />
+                </MemoryRouter>
+            </QueryClientProvider>
+        );
+
+        await waitFor(() => expect(getByTestId("appnavbar-articles-dropdown")).toBeInTheDocument());
+        const dropdown = getByTestId("appnavbar-articles-dropdown");
+        const aElement = dropdown.querySelector("a");
+        expect(aElement).toBeInTheDocument();
+        aElement?.click();
+        await waitFor( () => expect(getByTestId(/appnavbar-articles-list/)).toBeInTheDocument() );
+
+    });
+    test("renders the helprequest menu correctly for an admin", async () => {
+
+        const currentUser = currentUserFixtures.adminUser;
+        const systemInfo = systemInfoFixtures.showingBoth;
+
+        const doLogin = jest.fn();
+
+        const {getByTestId  } = render(
+            <QueryClientProvider client={queryClient}>
+                <MemoryRouter>
+                    <AppNavbar currentUser={currentUser} systemInfo={systemInfo} doLogin={doLogin} />
+                </MemoryRouter>
+            </QueryClientProvider>
+        );
+
+        await waitFor(() => expect(getByTestId("appnavbar-help-request-dropdown")).toBeInTheDocument());
+        const dropdown = getByTestId("appnavbar-help-request-dropdown");
+        const aElement = dropdown.querySelector("a");
+        expect(aElement).toBeInTheDocument();
+        aElement?.click();
+        await waitFor( () => expect(getByTestId(/appnavbar-help-request-list/)).toBeInTheDocument() );
+
+    });
+    test("renders the menuitemreview menu correctly for an admin", async () => {
+
+        const currentUser = currentUserFixtures.adminUser;
+        const systemInfo = systemInfoFixtures.showingBoth;
+
+        const doLogin = jest.fn();
+
+        const {getByTestId  } = render(
+            <QueryClientProvider client={queryClient}>
+                <MemoryRouter>
+                    <AppNavbar currentUser={currentUser} systemInfo={systemInfo} doLogin={doLogin} />
+                </MemoryRouter>
+            </QueryClientProvider>
+        );
+
+        await waitFor(() => expect(getByTestId("appnavbar-menu-item-review-dropdown")).toBeInTheDocument());
+        const dropdown = getByTestId("appnavbar-menu-item-review-dropdown");
+        const aElement = dropdown.querySelector("a");
+        expect(aElement).toBeInTheDocument();
+        aElement?.click();
+        await waitFor( () => expect(getByTestId(/appnavbar-menu-item-review-list/)).toBeInTheDocument() );
+
+    });
+    test("renders the recommendationrequest menu correctly for an admin", async () => {
+
+        const currentUser = currentUserFixtures.adminUser;
+        const systemInfo = systemInfoFixtures.showingBoth;
+
+        const doLogin = jest.fn();
+
+        const {getByTestId  } = render(
+            <QueryClientProvider client={queryClient}>
+                <MemoryRouter>
+                    <AppNavbar currentUser={currentUser} systemInfo={systemInfo} doLogin={doLogin} />
+                </MemoryRouter>
+            </QueryClientProvider>
+        );
+
+        await waitFor(() => expect(getByTestId("appnavbar-recommendation-request-dropdown")).toBeInTheDocument());
+        const dropdown = getByTestId("appnavbar-recommendation-request-dropdown");
+        const aElement = dropdown.querySelector("a");
+        expect(aElement).toBeInTheDocument();
+        aElement?.click();
+        await waitFor( () => expect(getByTestId(/appnavbar-recommendation-request-list/)).toBeInTheDocument() );
+
+    });
+    test("renders the ucsbdiningcommonsmenuitem menu correctly for an admin", async () => {
+
+        const currentUser = currentUserFixtures.adminUser;
+        const systemInfo = systemInfoFixtures.showingBoth;
+
+        const doLogin = jest.fn();
+
+        const {getByTestId  } = render(
+            <QueryClientProvider client={queryClient}>
+                <MemoryRouter>
+                    <AppNavbar currentUser={currentUser} systemInfo={systemInfo} doLogin={doLogin} />
+                </MemoryRouter>
+            </QueryClientProvider>
+        );
+
+        await waitFor(() => expect(getByTestId("appnavbar-ucsb-dining-commons-menu-item-dropdown")).toBeInTheDocument());
+        const dropdown = getByTestId("appnavbar-ucsb-dining-commons-menu-item-dropdown");
+        const aElement = dropdown.querySelector("a");
+        expect(aElement).toBeInTheDocument();
+        aElement?.click();
+        await waitFor( () => expect(getByTestId(/appnavbar-ucsb-dining-commons-menu-item-list/)).toBeInTheDocument() );
+
+    });
+    test("renders the ucsborganization menu correctly for an admin", async () => {
+
+        const currentUser = currentUserFixtures.adminUser;
+        const systemInfo = systemInfoFixtures.showingBoth;
+
+        const doLogin = jest.fn();
+
+        const {getByTestId  } = render(
+            <QueryClientProvider client={queryClient}>
+                <MemoryRouter>
+                    <AppNavbar currentUser={currentUser} systemInfo={systemInfo} doLogin={doLogin} />
+                </MemoryRouter>
+            </QueryClientProvider>
+        );
+
+        await waitFor(() => expect(getByTestId("appnavbar-ucsb-organization-dropdown")).toBeInTheDocument());
+        const dropdown = getByTestId("appnavbar-ucsb-organization-dropdown");
+        const aElement = dropdown.querySelector("a");
+        expect(aElement).toBeInTheDocument();
+        aElement?.click();
+        await waitFor( () => expect(getByTestId(/appnavbar-ucsb-organization-list/)).toBeInTheDocument() );
+
+    });
+
    
 });
 
