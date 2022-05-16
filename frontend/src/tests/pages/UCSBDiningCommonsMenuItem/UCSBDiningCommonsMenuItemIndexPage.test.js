@@ -26,7 +26,7 @@ describe("UCSBDiningCommonsMenuItemIndexPage tests", () => {
 
     const axiosMock =new AxiosMockAdapter(axios);
 
-    const testId = "UCSBDiningCommonsMenuItemTable";
+    const testId = "UCSBDiningCommonsMenuItem";
 
     const setupUserOnly = () => {
         axiosMock.reset();

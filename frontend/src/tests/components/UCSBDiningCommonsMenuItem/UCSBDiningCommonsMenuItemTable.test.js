@@ -66,7 +66,7 @@ describe("UCSBDiningCommonsMenuItemTable tests", () => {
     );
     const expectedHeaders = ['id',  'Dining Commons Code', 'Name','Station'];
     const expectedFields = ['id', 'diningCommonsCode','name', 'station'];
-    const testId = "UCSBDiningCommonsMenuItemTable";
+    const testId = "UCSBDiningCommonsMenuItem";
     expectedHeaders.forEach((headerText) => {
       const header = getByText(headerText);
       expect(header).toBeInTheDocument();
