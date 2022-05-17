@@ -62,6 +62,60 @@ export default function AppNavbar({ currentUser, systemInfo, doLogout, currentUr
                   </NavDropdown>
                 )
               }
+
+
+
+
+
+              {
+                hasRole(currentUser, "ROLE_USER") && (
+                  <NavDropdown title="article" id="appnavbar-articles-dropdown" data-testid="appnavbar-articles-dropdown" >
+                    <NavDropdown.Item as={Link} to="/articles/list" data-testid="appnavbar-articles-list">List Articles</NavDropdown.Item>
+                  </NavDropdown>
+                )
+              }
+              {
+                hasRole(currentUser, "ROLE_USER") && (
+                  <NavDropdown title="help" id="appnavbar-help-request-dropdown" data-testid="appnavbar-help-request-dropdown" >
+                    <NavDropdown.Item as={Link} to="/helprequest/list" data-testid="appnavbar-help-request-list">List Help Requests</NavDropdown.Item>
+                  </NavDropdown>
+                )
+              }
+              {
+                hasRole(currentUser, "ROLE_USER") && (
+                  <NavDropdown title="review" id="appnavbar-menu-item-review-dropdown" data-testid="appnavbar-menu-item-review-dropdown" >
+                    <NavDropdown.Item as={Link} to="/menuitemreview/list" data-testid="appnavbar-menu-item-review-list">List Menu Item Reviews</NavDropdown.Item>
+                  </NavDropdown>
+                )
+              }
+              {
+                hasRole(currentUser, "ROLE_USER") && (
+                  <NavDropdown title="reccs" id="appnavbar-recommendation-request-dropdown" data-testid="appnavbar-recommendation-request-dropdown" >
+                    <NavDropdown.Item as={Link} to="/recommendationrequest/list" data-testid="appnavbar-recommendation-request-list">List Recommendation Requests</NavDropdown.Item>
+                  </NavDropdown>
+                )
+              }
+              {
+                hasRole(currentUser, "ROLE_USER") && (
+                  <NavDropdown title="menu item" id="appnavbar-ucsb-dining-commons-menu-item-dropdown" data-testid="appnavbar-ucsb-dining-commons-menu-item-dropdown" >
+                    <NavDropdown.Item as={Link} to="/ucsbdiningcommonsmenuitem/list" data-testid="appnavbar-ucsb-dining-commons-menu-item-list">List UCSB Dining Commons Menu Items</NavDropdown.Item>
+                  </NavDropdown>
+                )
+              }
+              {
+                hasRole(currentUser, "ROLE_USER") && (
+                  <NavDropdown title="orgs" id="appnavbar-ucsb-organization-dropdown" data-testid="appnavbar-ucsb-organization-dropdown" >
+                    <NavDropdown.Item as={Link} to="/ucsborganization/list" data-testid="appnavbar-ucsb-organization-list">List UCSB Organizations</NavDropdown.Item>
+                  </NavDropdown>
+                )
+              }
+
+
+
+
+
+
+
               {
                 hasRole(currentUser, "ROLE_USER") && (
                   <NavDropdown title="UCSBDates" id="appnavbar-ucsbdates-dropdown" data-testid="appnavbar-ucsbdates-dropdown" >
