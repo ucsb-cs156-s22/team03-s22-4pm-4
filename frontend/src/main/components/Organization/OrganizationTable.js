@@ -8,7 +8,7 @@ export default function OrganizationTable({ organization, currentUser }) {
   const navigate = useNavigate();
 
   const editCallback = (cell) => {
-    navigate(`/ucsborganization/edit/${cell.row.values.id}`);
+    navigate(`/ucsborganization/edit/${cell.row.values.orgCode}`);
   };
 
   // Stryker disable all : hard to test for query caching
@@ -39,7 +39,7 @@ export default function OrganizationTable({ organization, currentUser }) {
     },
     {
       Header: "inactive",
-      accessor: "inactive",
+      id: "inactive",
       accessor: (row, _rowIndex) => String(row.inactive),
     },
   ];
