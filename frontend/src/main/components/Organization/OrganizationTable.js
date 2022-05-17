@@ -39,7 +39,7 @@ export default function OrganizationTable({ organization, currentUser }) {
     },
     {
       Header: "inactive",
-      accessor: "inactive",
+      id: "inactive",
       accessor: (row, _rowIndex) => String(row.inactive),
     },
   ];
