@@ -1,5 +1,6 @@
 const articlesFixtures = {
     oneArticle: {
+        "id": "1",
         "dateAdded": "2022-04-17",
         "email": "a@ucsb.edu",
         "explanation": "none",
@@ -8,6 +9,7 @@ const articlesFixtures = {
     },
     threeArticles: [
         {
+            "id": "1",
             "dateAdded": "2022-04-17",
             "email": "a1@ucsb.edu",
             "explanation": "none1",
@@ -15,6 +17,7 @@ const articlesFixtures = {
             "url": "https://none1",
         },
         {
+            "id": "2",
             "dateAdded": "2022-04-17",
             "email": "a2@ucsb.edu",
             "explanation": "none2",
@@ -22,6 +25,7 @@ const articlesFixtures = {
             "url": "https://none2",
         },
         {
+            "id": "3",
             "dateAdded": "2022-04-17",
             "email": "a3@ucsb.edu",
             "explanation": "none3",

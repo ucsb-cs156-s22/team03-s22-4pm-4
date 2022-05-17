@@ -6,6 +6,10 @@ export default function ArticlesTable({ articles, currentUser }) {
 
     const columns = [
         {
+            Header: 'id',
+            accessor: 'id', 
+        },
+        {
             Header: 'Date Added',
             accessor: 'dateAdded', 
         },
