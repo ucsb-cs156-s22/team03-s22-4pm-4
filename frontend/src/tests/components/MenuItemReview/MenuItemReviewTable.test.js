@@ -1,7 +1,6 @@
 import {  render } from "@testing-library/react";
 import { menuItemReviewFixtures } from "fixtures/menuItemReviewFixtures";
 import MenuItemReviewTable from "main/components/MenuItemReview/MenuItemReviewTable";
-import { onDeleteSuccess } from "main/utils/UCSBDateUtils"
 import { QueryClient, QueryClientProvider } from "react-query";
 import { MemoryRouter } from "react-router-dom";
 import { currentUserFixtures } from "fixtures/currentUserFixtures";

@@ -128,6 +128,9 @@ describe("MenuItemReviewIndexPage tests", () => {
             </QueryClientProvider>
         );
 
+        await waitFor(() => { expect(axiosMock.history.get.length).toBeGreaterThanOrEqual(3); });
+        restoreConsole();
+        
         const expectedHeaders = ['id', 'Item Id','Reviewer Email', 'Stars', 'Date Reviewed', 'Comments'];
 
         expectedHeaders.forEach((headerText) => {
