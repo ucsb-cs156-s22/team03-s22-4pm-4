@@ -156,7 +156,7 @@ describe("UCSBDatesIndexPage tests", () => {
 
         await waitFor(() => { expect(getByTestId(`${testId}-cell-row-0-col-code`)).toBeInTheDocument(); });
 
-        expect(getByTestId(`${testId}-cell-row-0-col-code`)).toHaveTextContent("de-la-guerra"); 
+       expect(getByTestId(`${testId}-cell-row-0-col-code`)).toHaveTextContent("de-la-guerra"); 
 
 
         const deleteButton = getByTestId(`${testId}-cell-row-0-col-Delete-button`);
