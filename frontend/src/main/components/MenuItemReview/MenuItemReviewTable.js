@@ -1,28 +1,37 @@
-import OurTable from "main/components/OurTable";
-// , { ButtonColumn } 
-// import { useBackendMutation } from "main/utils/useBackend";
-// import { cellToAxiosParamsDelete, onDeleteSuccess } from "main/utils/UCSBDateUtils"
+import OurTable, { ButtonColumn} from "main/components/OurTable";
+import { useBackendMutation } from "main/utils/useBackend";
+import { onDeleteSuccess } from "main/utils/UCSBDateUtils"
 // import { useNavigate } from "react-router-dom";
-// import { hasRole } from "main/utils/currentUser";
+import { hasRole } from "main/utils/currentUser";
 
-export default function MenuItemReviewTable({ menuItemReview, _currentUser }) {
+export function cellToAxiosParamsDelete(cell) {
+    return {
+        url: "/api/MenuItemReview",
+        method: "DELETE",
+        params: {
+            id: cell.row.values.id
+        }
+    }
+}
+
+export default function MenuItemReviewTable({ menuItemReview, currentUser }) {
 
     // const navigate = useNavigate();
 
     // const editCallback = (cell) => {
-    //     navigate(`/ucsbdates/edit/${cell.row.values.id}`)
+    //     navigate(`/menuitemreview/edit/${cell.row.values.id}`)
     // }
 
     // Stryker disable all : hard to test for query caching
-    // const deleteMutation = useBackendMutation(
-    //     cellToAxiosParamsDelete,
-    //     { onSuccess: onDeleteSuccess },
-    //     ["/api/ucsbdates/all"]
-    // );
+    const deleteMutation = useBackendMutation(
+        cellToAxiosParamsDelete,
+        { onSuccess: onDeleteSuccess },
+        ["/api/MenuItemReview/all"]
+    );
     // Stryker enable all 
 
     // Stryker disable next-line all : TODO try to make a good test for this
-    // const deleteCallback = async (cell) => { deleteMutation.mutate(cell); }
+    const deleteCallback = async (cell) => { deleteMutation.mutate(cell); }
 
     const columns = [
         {
@@ -51,19 +60,19 @@ export default function MenuItemReviewTable({ menuItemReview, _currentUser }) {
         }
     ];
 
-    // const columnsIfAdmin = [
-    //     ...columns,
-    //     ButtonColumn("Edit", "primary", editCallback, "UCSBDatesTable"),
-    //     ButtonColumn("Delete", "danger", deleteCallback, "UCSBDatesTable")
-    // ];
+    const testid = "MenuItemReviewTable"    
+    const columnsIfAdmin = [
+        ...columns,
+        //ButtonColumn("Edit", "primary", editCallback, "UCSBDatesTable"),
+        ButtonColumn("Delete", "danger", deleteCallback, "MenuItemReviewTable")
+    ];
 
-    // const columnsToDisplay = hasRole(currentUser, "ROLE_ADMIN") ? columnsIfAdmin : columns;
+    const columnsToDisplay = hasRole(currentUser, "ROLE_ADMIN") ? columnsIfAdmin : columns;
 
-    const columnsToDisplay = columns;
 
     return <OurTable
         data={menuItemReview}
         columns={columnsToDisplay}
-        testid={"MenuItemReviewTable"}
+        testid={testid}
     />;
 };
