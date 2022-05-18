@@ -9,69 +9,108 @@ import TodosEditPage from "main/pages/Todos/TodosEditPage";
 
 import DiningCommonsIndexPage from "main/pages/DiningCommons/DiningCommonsIndexPage";
 
+import UCSBDiningCommonsMenuItemIndexPage from "main/pages/UCSBDiningCommonsMenuItem/UCSBDiningCommonsMenuItemIndexPage";
 import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
 
 import UCSBDatesIndexPage from "main/pages/UCSBDates/UCSBDatesIndexPage";
 import UCSBDatesCreatePage from "main/pages/UCSBDates/UCSBDatesCreatePage";
 import UCSBDatesEditPage from "main/pages/UCSBDates/UCSBDatesEditPage";
 
+import ArticleIndexPage from "main/pages/Article/ArticleIndexPage";
+
+import OrganizationIndexPage from "main/pages/Organization/OrganizationIndexPage";
 
 import { hasRole, useCurrentUser } from "main/utils/currentUser";
 
 import "bootstrap/dist/css/bootstrap.css";
 
-
 function App() {
-
   const { data: currentUser } = useCurrentUser();
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path="/" element={<HomePage />} />
-        <Route exact path="/profile" element={<ProfilePage />} />
-        {
-          hasRole(currentUser, "ROLE_ADMIN") && <Route exact path="/admin/users" element={<AdminUsersPage />} />
-        }
-        {
-          hasRole(currentUser, "ROLE_USER") && (
-            <>
-              <Route exact path="/todos/list" element={<TodosIndexPage />} />
-              <Route exact path="/todos/create" element={<TodosCreatePage />} />
-              <Route exact path="/todos/edit/:todoId" element={<TodosEditPage />} />
-            </>
-          )
-        }
-        {
-          hasRole(currentUser, "ROLE_USER") && (
-            <>
-              <Route exact path="/diningCommons/list" element={<DiningCommonsIndexPage />} />
-            </>
-          )
-        }
-        {
-          hasRole(currentUser, "ROLE_USER") && (
-            <>
-            <Route exact path = "/helprequest/list" element={<HelpRequestIndexPage />} />
-            </>
-          )
-        }
-        {
-          hasRole(currentUser, "ROLE_USER") && (
-            <>
-              <Route exact path="/ucsbdates/list" element={<UCSBDatesIndexPage />} />
-            </>
-          )
-        }
-        {
-          hasRole(currentUser, "ROLE_ADMIN") && (
-            <>
-              <Route exact path="/ucsbdates/edit/:id" element={<UCSBDatesEditPage />} />
-              <Route exact path="/ucsbdates/create" element={<UCSBDatesCreatePage />} />
-            </>
-          )
-        }
+        <Route exact path='/' element={<HomePage />} />
+        <Route exact path='/profile' element={<ProfilePage />} />
+        {hasRole(currentUser, "ROLE_ADMIN") && (
+          <Route exact path='/admin/users' element={<AdminUsersPage />} />
+        )}
+        {hasRole(currentUser, "ROLE_USER") && (
+          <>
+            <Route exact path='/todos/list' element={<TodosIndexPage />} />
+            <Route exact path='/todos/create' element={<TodosCreatePage />} />
+            <Route
+              exact
+              path='/todos/edit/:todoId'
+              element={<TodosEditPage />}
+            />
+          </>
+        )}
+        {hasRole(currentUser, "ROLE_USER") && (
+          <>
+            <Route
+              exact
+              path='/diningCommons/list'
+              element={<DiningCommonsIndexPage />}
+            />
+          </>
+        )}
+        {hasRole(currentUser, "ROLE_USER") && (
+          <>
+            <Route
+              exact
+              path='/ucsbdiningcommonsmenuitem/list'
+              element={<UCSBDiningCommonsMenuItemIndexPage />}
+            />
+          </>
+        )}
+        {hasRole(currentUser, "ROLE_USER") && (
+          <>
+            <Route
+              exact
+              path='/helprequest/list'
+              element={<HelpRequestIndexPage />}
+            />
+          </>
+        )}
+        {hasRole(currentUser, "ROLE_USER") && (
+          <>
+            <Route
+              exact
+              path='/ucsbdates/list'
+              element={<UCSBDatesIndexPage />}
+            />
+          </>
+        )}
+        {hasRole(currentUser, "ROLE_ADMIN") && (
+          <>
+            <Route
+              exact
+              path='/ucsbdates/edit/:id'
+              element={<UCSBDatesEditPage />}
+            />
+            <Route
+              exact
+              path='/ucsbdates/create'
+              element={<UCSBDatesCreatePage />}
+            />
+          </>
+        )}
+        {hasRole(currentUser, "ROLE_USER") && (
+          <>
+            <Route exact path='/articles/list' element={<ArticleIndexPage />} />
+          </>
+        )}
 
+        {hasRole(currentUser, "ROLE_USER") && (
+          <>
+            <Route
+              exact
+              path='/ucsborganization/list'
+              element={<OrganizationIndexPage />}
+            />
+          </>
+        )}
       </Routes>
     </BrowserRouter>
   );
