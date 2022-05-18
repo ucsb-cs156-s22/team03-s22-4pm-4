@@ -1,14 +1,12 @@
 import React from "react";
 import { useBackend } from "main/utils/useBackend";
+import { useCurrentUser } from "main/utils/currentUser";
 
 import BasicLayout from "main/layouts/BasicLayout/BasicLayout";
 import OrganizationTable from "main/components/Organization/OrganizationTable";
 
-import { useCurrentUser } from "main/utils/currentUser";
-
 export default function OrganizationIndexPage() {
   const currentUser = useCurrentUser();
-
   const {
     data: organization,
     error: _error,
@@ -25,7 +23,10 @@ export default function OrganizationIndexPage() {
     <BasicLayout>
       <div className='pt-2'>
         <h1>Organization</h1>
-        <OrganizationTable data={organization} currentUser={currentUser} />
+        <OrganizationTable
+          organization={organization}
+          currentUser={currentUser}
+        />
       </div>
     </BasicLayout>
   );
