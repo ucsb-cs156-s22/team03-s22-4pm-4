@@ -1,5 +1,5 @@
 // import { fireEvent, render, waitFor } from "@testing-library/react";
-import { render } from "@testing-library/react";
+import { render, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { MemoryRouter } from "react-router-dom";
 import UCSBDiningCommonsMenuItemIndexPage from "main/pages/UCSBDiningCommonsMenuItem/UCSBDiningCommonsMenuItemIndexPage";
@@ -10,7 +10,7 @@ import { systemInfoFixtures } from "fixtures/systemInfoFixtures";
 // import { ucsbDiningCommonsMenuItemFixtures } from "fixtures/ucsbDiningCommonsMenuItemFixtures";
 import axios from "axios";
 import AxiosMockAdapter from "axios-mock-adapter";
-// import mockConsole from "jest-mock-console";
+import mockConsole from "jest-mock-console";
 
 
 const mockToast = jest.fn();
@@ -27,7 +27,7 @@ describe("UCSBDiningCommonsMenuItemIndexPage tests", () => {
 
     const axiosMock =new AxiosMockAdapter(axios);
 
-    // const testId = "UCSBDiningCommonsMenuItemTable";
+    const testId = "UCSBDiningCommonsMenuItemTable";
 
     const setupUserOnly = () => {
         axiosMock.reset();
@@ -72,9 +72,8 @@ describe("UCSBDiningCommonsMenuItemIndexPage tests", () => {
             </QueryClientProvider>
         );
 
-/*
     });
-
+/*
     test("renders three menu items without crashing for regular user", async () => {
         setupUserOnly();
         const queryClient = new QueryClient();
@@ -112,7 +111,7 @@ describe("UCSBDiningCommonsMenuItemIndexPage tests", () => {
         expect(getByTestId(`${testId}-cell-row-2-col-id`)).toHaveTextContent("3");
 
     });
-
+*/
     test("renders empty table when backend unavailable, user only", async () => {
         setupUserOnly();
 
@@ -134,7 +133,7 @@ describe("UCSBDiningCommonsMenuItemIndexPage tests", () => {
 
         expect(queryByTestId(`${testId}-cell-row-0-col-id`)).not.toBeInTheDocument();
     });
-
+/*
     test("test what happens when you click delete, admin", async () => {
         setupAdminUser();
 
@@ -162,9 +161,9 @@ describe("UCSBDiningCommonsMenuItemIndexPage tests", () => {
         fireEvent.click(deleteButton);
 
         await waitFor(() => { expect(mockToast).toBeCalledWith("UCSBDiningCommonsMenuItem with id 1 was deleted") });
-*/
-    });
 
+    });
+*/
 });
 
 
