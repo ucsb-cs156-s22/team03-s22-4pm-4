@@ -1,8 +1,8 @@
 import OurTable, { _ButtonColumn} from "main/components/OurTable";
 import { _useBackendMutation } from "main/utils/useBackend";
-import { hasRole } from "main/utils/currentUser";
+import { _hasRole } from "main/utils/currentUser";
 
-export default function ArticlesTable({ articles, currentUser }) {
+export default function ArticlesTable({ articles, _currentUser }) {
 
     const columns = [
         {
@@ -33,11 +33,13 @@ export default function ArticlesTable({ articles, currentUser }) {
 
     const testid = "ArticlesTable";
 
-    const columnsIfAdmin = [
-        ...columns
-    ];
+    // const columnsIfAdmin = [
+    //     ...columns,
+    //     ButtonColumn("Delete", "danger", deleteCallback, testid)
+    // ];
 
-    const columnsToDisplay = hasRole(currentUser, "ROLE_ADMIN") ? columnsIfAdmin : columns;
+    // const columnsToDisplay = hasRole(currentUser, "ROLE_ADMIN") ? columnsIfAdmin : columns;
+    const columnsToDisplay = columns;
 
     return <OurTable
         data={articles}

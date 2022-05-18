@@ -43,7 +43,7 @@ describe("ArticleIndexPage tests", () => {
     test("renders without crashing for regular user", () => {
         setupUserOnly();
         const queryClient = new QueryClient();
-        axiosMock.onGet("/api/articles/all").reply(200, []);
+        axiosMock.onGet("/api/Article/all").reply(200, []);
 
         render(
             <QueryClientProvider client={queryClient}>
@@ -59,7 +59,7 @@ describe("ArticleIndexPage tests", () => {
     test("renders without crashing for admin user", () => {
         setupAdminUser();
         const queryClient = new QueryClient();
-        axiosMock.onGet("/api/articles/all").reply(200, []);
+        axiosMock.onGet("/api/Article/all").reply(200, []);
 
         render(
             <QueryClientProvider client={queryClient}>
@@ -133,7 +133,7 @@ describe("ArticleIndexPage tests", () => {
           expect(header).toBeInTheDocument();
         });
 
-        expect(queryByTestId(`${testId}-cell-row-0-col-code`)).not.toBeInTheDocument();
+        expect(queryByTestId(`${testId}-cell-row-0-col-id`)).not.toBeInTheDocument();
     });
 
 });
