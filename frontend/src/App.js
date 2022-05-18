@@ -2,28 +2,20 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "main/pages/HomePage";
 import ProfilePage from "main/pages/ProfilePage";
 import AdminUsersPage from "main/pages/AdminUsersPage";
-
 import TodosIndexPage from "main/pages/Todos/TodosIndexPage";
 import TodosCreatePage from "main/pages/Todos/TodosCreatePage";
 import TodosEditPage from "main/pages/Todos/TodosEditPage";
-import MenuItemReviewsIndexPage from "main/pages/MenuItemReviews/MenuItemReviewsIndexPage";
 
+import MenuItemReviewsIndexPage from "main/pages/MenuItemReviews/MenuItemReviewsIndexPage";
 import DiningCommonsIndexPage from "main/pages/DiningCommons/DiningCommonsIndexPage";
 
 import UCSBDatesIndexPage from "main/pages/UCSBDates/UCSBDatesIndexPage";
 import UCSBDatesCreatePage from "main/pages/UCSBDates/UCSBDatesCreatePage";
 import UCSBDatesEditPage from "main/pages/UCSBDates/UCSBDatesEditPage";
-
-
 import { hasRole, useCurrentUser } from "main/utils/currentUser";
-
 import "bootstrap/dist/css/bootstrap.css";
-
-
 function App() {
-
   const { data: currentUser } = useCurrentUser();
-
   return (
     <BrowserRouter>
       <Routes>
@@ -51,7 +43,7 @@ function App() {
         {
           hasRole(currentUser, "ROLE_USER") && (
             <>
-              <Route exact path="/reviews/list" element={<MenuItemReviewsIndexPage />} />
+              <Route exact path="//menuitemreview/list" element={<MenuItemReviewsIndexPage />} />
             </>
           )
         }
@@ -70,10 +62,8 @@ function App() {
             </>
           )
         }
-
       </Routes>
     </BrowserRouter>
   );
 }
-
 export default App;
