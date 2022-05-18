@@ -2,11 +2,11 @@ import {  render } from "@testing-library/react";
 import { helpRequestFixtures } from "fixtures/helpRequestFixtures";
 import HelpRequestTable from "main/components/HelpRequest/HelpRequestTable";
 import { cellToAxiosParamsDelete } from "main/components/HelpRequest/HelpRequestTable";
-import { onDeleteSuccess } from "main/utils/UCSBDateUtils"
+
 import { QueryClient, QueryClientProvider } from "react-query";
 import { MemoryRouter } from "react-router-dom";
 import { currentUserFixtures } from "fixtures/currentUserFixtures";
-import mockConsole from "jest-mock-console";
+
 
 const mockedNavigate = jest.fn();
 
