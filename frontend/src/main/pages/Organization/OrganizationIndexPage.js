@@ -1,3 +1,4 @@
+
 import React from "react";
 import { useBackend } from "main/utils/useBackend";
 import { useCurrentUser } from "main/utils/currentUser";
@@ -18,7 +19,6 @@ export default function OrganizationIndexPage() {
     { method: "GET", url: "/api/ucsborganization/all" },
     []
   );
-
   return (
     <BasicLayout>
       <div className='pt-2'>
