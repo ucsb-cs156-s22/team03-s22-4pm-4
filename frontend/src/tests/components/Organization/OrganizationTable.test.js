@@ -99,9 +99,9 @@ describe("OrganizationTable tests", () => {
     expect(editButton).toBeInTheDocument();
     expect(editButton).toHaveClass("btn-primary");
 
-    // const deleteButton = getByTestId(`${testId}-cell-row-0-col-Delete-button`);
-    // expect(deleteButton).toBeInTheDocument();
-    // expect(deleteButton).toHaveClass("btn-danger");
+    const deleteButton = getByTestId(`${testId}-cell-row-0-col-Delete-button`);
+    expect(deleteButton).toBeInTheDocument();
+    expect(deleteButton).toHaveClass("btn-danger");
   });
 
   test("Edit button navigates to the edit page for admin user", async () => {
