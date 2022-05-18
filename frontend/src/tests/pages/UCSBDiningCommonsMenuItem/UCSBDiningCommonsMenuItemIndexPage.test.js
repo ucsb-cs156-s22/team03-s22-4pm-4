@@ -72,7 +72,6 @@ describe("UCSBDiningCommonsMenuItemIndexPage tests", () => {
             </QueryClientProvider>
         );
 
-
     });
 
     test("renders three menu items without crashing for regular user", async () => {
