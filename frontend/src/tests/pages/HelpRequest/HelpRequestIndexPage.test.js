@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { fireEvent, render, waitFor } from "@testing-library/react";
-=======
-import { render } from "@testing-library/react";
->>>>>>> f5b8906406158e4199835c7e351f772c232e5130
 import { QueryClient, QueryClientProvider } from "react-query";
 import { MemoryRouter } from "react-router-dom";
 import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
@@ -10,10 +6,7 @@ import HelpRequestIndexPage from "main/pages/HelpRequest/HelpRequestIndexPage";
 
 import { apiCurrentUserFixtures } from "fixtures/currentUserFixtures";
 import { systemInfoFixtures } from "fixtures/systemInfoFixtures";
-<<<<<<< HEAD
 import { helpRequestFixtures } from "fixtures/helpRequestFixtures";
-=======
->>>>>>> f5b8906406158e4199835c7e351f772c232e5130
 import axios from "axios";
 import AxiosMockAdapter from "axios-mock-adapter";
 import _mockConsole from "jest-mock-console";
@@ -33,11 +26,7 @@ describe("HelpRequestIndexPage tests", () => {
 
     const axiosMock =new AxiosMockAdapter(axios);
 
-<<<<<<< HEAD
     const testId = "HelpRequestTable";
-=======
-
->>>>>>> f5b8906406158e4199835c7e351f772c232e5130
 
     const setupUserOnly = () => {
         axiosMock.reset();
@@ -56,10 +45,7 @@ describe("HelpRequestIndexPage tests", () => {
     test("renders without crashing for regular user", () => {
         setupUserOnly();
         const queryClient = new QueryClient();
-<<<<<<< HEAD
         axiosMock.onGet("/api/helprequest/all").reply(200, []);
-=======
->>>>>>> f5b8906406158e4199835c7e351f772c232e5130
 
         render(
             <QueryClientProvider client={queryClient}>
@@ -75,10 +61,7 @@ describe("HelpRequestIndexPage tests", () => {
     test("renders without crashing for admin user", () => {
         setupAdminUser();
         const queryClient = new QueryClient();
-<<<<<<< HEAD
         axiosMock.onGet("/api/helprequest/all").reply(200, []);
-=======
->>>>>>> f5b8906406158e4199835c7e351f772c232e5130
 
         render(
             <QueryClientProvider client={queryClient}>
@@ -90,7 +73,6 @@ describe("HelpRequestIndexPage tests", () => {
 
 
     });
-<<<<<<< HEAD
 
     test("renders three helpRequest without crashing for regular user", async () => {
         setupUserOnly();
@@ -186,6 +168,4 @@ describe("HelpRequestIndexPage tests", () => {
 
     });
 
-=======
->>>>>>> f5b8906406158e4199835c7e351f772c232e5130
 });
