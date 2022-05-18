@@ -18,8 +18,11 @@ import UCSBDatesEditPage from "main/pages/UCSBDates/UCSBDatesEditPage";
 
 import ArticleIndexPage from "main/pages/Article/ArticleIndexPage";
 
+import OrganizationIndexPage from "main/pages/Organization/OrganizationIndexPage";
+
 import { hasRole, useCurrentUser } from "main/utils/currentUser";
 import "bootstrap/dist/css/bootstrap.css";
+
 function App() {
   const { data: currentUser } = useCurrentUser();
   return (
@@ -89,6 +92,7 @@ function App() {
             </>
           )
         }
+
       </Routes>
     </BrowserRouter>
   );
