@@ -21,7 +21,7 @@ export default function MenuItemReviewIndexPage() {
   return (
     <BasicLayout>
       <div className="pt-2">
-        <h1>UCSB Dining Commons Menu Item</h1>
+        <h1>Menu Item Reviews</h1>
         <MenuItemReviewsTable menuItemReview={menuItemReview} currentUser={currentUser} />
       </div>
     </BasicLayout>
