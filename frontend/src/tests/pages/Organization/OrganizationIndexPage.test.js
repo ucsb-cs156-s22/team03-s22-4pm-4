@@ -1,4 +1,4 @@
-import { _fireEvent, render, waitFor } from "@testing-library/react";
+import { fireEvent, render, waitFor } from "@testing-library/react"
 import { QueryClient, QueryClientProvider } from "react-query";
 import { MemoryRouter } from "react-router-dom";
 import OrganizationIndexPage from "main/pages/Organization/OrganizationIndexPage";
@@ -166,31 +166,42 @@ describe("OrganizationIndexPage tests", () => {
     ).not.toBeInTheDocument();
   });
 
-  // test("test what happens when you click delete, admin", async () => {
-  //     setupAdminUser();
+  test("test what happens when you click delete, admin", async () => {
+    setupAdminUser();
 
-  //     const queryClient = new QueryClient();
-  //     axiosMock.onGet("/api/ucsbdiningcommons/all").reply(200, diningCommonsFixtures.threeCommons);
-  //     axiosMock.onDelete("/api/ucsbdiningcommons", {params: {code: "de-la-guerra"}}).reply(200, "DiningCommons with id de-la-guerra was deleted");
+    const queryClient = new QueryClient();
+    axiosMock
+      .onGet("/api/ucsborganization/all")
+      .reply(200, organizationFixtures.threeOrganization);
+    axiosMock
+      .onDelete("/api/ucsborganization", { params: { orgCode: "ABC" } })
+      .reply(200, "UCSBOrganization with id ABC deleted");
 
-  //     const { getByTestId } = render(
-  //         <QueryClientProvider client={queryClient}>
-  //             <MemoryRouter>
-  //                 <DiningCommonsIndexPage />
-  //             </MemoryRouter>
-  //         </QueryClientProvider>
-  //     );
+    const { getByTestId } = render(
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter>
+          <OrganizationIndexPage />
+        </MemoryRouter>
+      </QueryClientProvider>
+    );
 
-  //     await waitFor(() => { expect(getByTestId(`${testId}-cell-row-0-col-code`)).toBeInTheDocument(); });
+    await waitFor(() => {
+      expect(
+        getByTestId(`${testId}-cell-row-0-col-orgCode`)
+      ).toBeInTheDocument();
+    });
 
-  //    expect(getByTestId(`${testId}-cell-row-0-col-code`)).toHaveTextContent("de-la-guerra");
+    expect(getByTestId(`${testId}-cell-row-0-col-orgCode`)).toHaveTextContent(
+      "ABC"
+    );
 
-  //     const deleteButton = getByTestId(`${testId}-cell-row-0-col-Delete-button`);
-  //     expect(deleteButton).toBeInTheDocument();
+    const deleteButton = getByTestId(`${testId}-cell-row-0-col-Delete-button`);
+    expect(deleteButton).toBeInTheDocument();
 
-  //     fireEvent.click(deleteButton);
+    fireEvent.click(deleteButton);
 
-  //     await waitFor(() => { expect(mockToast).toBeCalledWith("DiningCommons with id de-la-guerra was deleted") });
-
-  // });
+    await waitFor(() => {
+      expect(mockToast).toBeCalledWith("UCSBOrganization with id ABC deleted");
+    });
+  });
 });
