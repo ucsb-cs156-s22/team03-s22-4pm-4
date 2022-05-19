@@ -18,7 +18,6 @@ export default function OrganizationIndexPage() {
     { method: "GET", url: "/api/ucsborganization/all" },
     []
   );
-
   return (
     <BasicLayout>
       <div className='pt-2'>
