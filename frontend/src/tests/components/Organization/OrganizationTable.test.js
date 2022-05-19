@@ -95,44 +95,44 @@ describe("OrganizationTable tests", () => {
       "DEF"
     );
 
-    const editButton = getByTestId(`${testId}-cell-row-0-col-Edit-button`);
-    expect(editButton).toBeInTheDocument();
-    expect(editButton).toHaveClass("btn-primary");
+    // const editButton = getByTestId(`${testId}-cell-row-0-col-Edit-button`);
+    // expect(editButton).toBeInTheDocument();
+    // expect(editButton).toHaveClass("btn-primary");
 
     const deleteButton = getByTestId(`${testId}-cell-row-0-col-Delete-button`);
     expect(deleteButton).toBeInTheDocument();
     expect(deleteButton).toHaveClass("btn-danger");
   });
 
-  test("Edit button navigates to the edit page for admin user", async () => {
-    const currentUser = currentUserFixtures.adminUser;
+  // test("Edit button navigates to the edit page for admin user", async () => {
+  //   const currentUser = currentUserFixtures.adminUser;
 
-    const { getByTestId } = render(
-      <QueryClientProvider client={queryClient}>
-        <MemoryRouter>
-          <OrganizationTable
-            organization={organizationFixtures.threeOrganization}
-            currentUser={currentUser}
-          />
-        </MemoryRouter>
-      </QueryClientProvider>
-    );
+  //   const { getByTestId } = render(
+  //     <QueryClientProvider client={queryClient}>
+  //       <MemoryRouter>
+  //         <OrganizationTable
+  //           organization={organizationFixtures.threeOrganization}
+  //           currentUser={currentUser}
+  //         />
+  //       </MemoryRouter>
+  //     </QueryClientProvider>
+  //   );
 
-    const testId = "OrganizationTable";
+  //   const testId = "OrganizationTable";
 
-    await waitFor(() => {
-      expect(getByTestId(`${testId}-cell-row-0-col-orgCode`)).toHaveTextContent(
-        "ABC"
-      );
-    });
+  //   await waitFor(() => {
+  //     expect(getByTestId(`${testId}-cell-row-0-col-orgCode`)).toHaveTextContent(
+  //       "ABC"
+  //     );
+  //   });
 
-    const editButton = getByTestId(`${testId}-cell-row-0-col-Edit-button`);
-    expect(editButton).toBeInTheDocument();
+  //   const editButton = getByTestId(`${testId}-cell-row-0-col-Edit-button`);
+  //   expect(editButton).toBeInTheDocument();
 
-    fireEvent.click(editButton);
+  //   fireEvent.click(editButton);
 
-    await waitFor(() =>
-      expect(mockedNavigate).toHaveBeenCalledWith("/ucsborganization/edit/ABC")
-    );
-  });
+  //   await waitFor(() =>
+  //     expect(mockedNavigate).toHaveBeenCalledWith("/ucsborganization/edit/ABC")
+  //   );
+  // });
 });
