@@ -10,6 +10,7 @@
     "babel-loader": "8.1.0",
     "bootstrap": "^5.0.0-beta3",
     "history": "^5.2.0",
+    "local-date-time": "^0.0.12",
     "react": "^17.0.1",
     "react-bootstrap": "^2.0.0-alpha.0",
     "react-dom": "^17.0.1",
